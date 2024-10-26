@@ -1,3 +1,5 @@
+//Like JS
+
 package com.example.word_muse.ui.home
 
 import android.os.Bundle
@@ -25,8 +27,14 @@ class HomeFragment : Fragment() {
         return root
     }
 
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    //Calling view model
+    fun search(){
+
     }
 }
