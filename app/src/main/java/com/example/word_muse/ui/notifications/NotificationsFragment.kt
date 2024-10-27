@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.word_muse.databinding.FragmentNotificationsBinding
 
-//Should be changed to account settings
+//TODO Should be changed to account settings
 class NotificationsFragment : Fragment() {
 
     private var _binding: FragmentNotificationsBinding? = null
