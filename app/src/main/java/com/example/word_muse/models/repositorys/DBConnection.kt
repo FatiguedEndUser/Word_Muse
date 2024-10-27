@@ -9,6 +9,7 @@ import android.provider.BaseColumns
 class DBConnection(context: Context) : SQLiteOpenHelper(context, "WordMuseDB", null, DATABASE_VERSION) {
     object FeedReaderContract {
         // Table contents are grouped together in an anonymous object.
+        //TODO do i rename the tablename column name, subtitle? What is the subtitle?
         object FeedEntry : BaseColumns {
             const val TABLE_NAME = "entry"
             const val COLUMN_NAME_TITLE = "title"
