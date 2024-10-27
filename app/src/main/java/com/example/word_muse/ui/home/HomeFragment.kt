@@ -35,6 +35,11 @@ class HomeFragment : Fragment() {
 
     //Calling view model
     fun search(){
+        //Call the api to make the search using
+        //https://api.dictionaryapi.dev/api/v2/entries/en/<word> "<word>" should be the word that the user is requesting to search
+    }
 
+    fun favorite(){
+        //Just a simple check or uncheck for the favorite
     }
 }

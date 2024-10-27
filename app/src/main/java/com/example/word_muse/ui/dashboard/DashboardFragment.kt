@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.word_muse.databinding.FragmentDashboardBinding
 
+//Should be changed to FavoriteFragment
 class DashboardFragment : Fragment() {
 
     private var _binding: FragmentDashboardBinding? = null
@@ -28,5 +29,14 @@ class DashboardFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    //Pull list of favorites
+    fun pull_favorties(){
+
+    }
+
+    fun unfavorite (){
+        //Uncheck a favorite to remove
     }
 }
