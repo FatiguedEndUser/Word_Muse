@@ -29,6 +29,7 @@ androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navi
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 androidx-sqlite-android = { group = "androidx.sqlite", name = "sqlite-android", version.ref = "sqliteAndroid" }
 androidx-sqlite-ktx = { group = "androidx.sqlite", name = "sqlite-ktx", version.ref = "sqliteKtx" }
+x_api-dictionaryapi-dev_api_v2 = { module = "https://api.dictionaryapi.dev/api/v2" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
