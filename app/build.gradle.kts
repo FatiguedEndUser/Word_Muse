@@ -39,11 +39,8 @@ android {
 }
 
 dependencies {
-    // Trying to add my api to the dependencies
-    //TODO get api to connect, had trouble connecting to v2 (Cannot GET /api/v2), v1 throws error
-    //using implementation vs api doesn't work
-    //Api endpoint: https://api.dictionaryapi.dev/api/<--version-->
-    implementation(libs.x.api.dictionaryapi.dev.api.v2)
+    implementation(com.squareup.retrofit2:retrofit:2.9.0)
+    implementation(com.squareup.retrofit2:converter-gson:2.9.0)
 
     //Default implementations
     implementation(libs.androidx.core.ktx)
