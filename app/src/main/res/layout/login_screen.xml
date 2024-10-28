@@ -21,9 +21,10 @@
 
     <EditText
         android:id="@+id/email_edit_text"
+        android:inputType="textEmailAddress"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="10dp"
         android:autofillHints=""
         android:hint="Email"
         app:layout_constraintBottom_toTopOf="@+id/password_edit_text"
@@ -33,11 +34,12 @@
 
     <EditText
         android:id="@+id/password_edit_text"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
+        android:layout_marginBottom="10dp"
         android:autofillHints=""
         android:hint="Password"
-        android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/login_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
