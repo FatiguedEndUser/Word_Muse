@@ -13,7 +13,7 @@ import  android.widget.SearchView
 
 class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? =
+    private var _binding: FragmentHomeBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,18 +22,19 @@ class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = inflate(inflater, container, false)
         val root: View = binding.root
         return root
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 
+
     //Calling view model
+
     fun search(word: String){
         //Call the api to make the search using
         //https://api.dictionaryapi.dev/api/v2/entries/en/<word> "<word>" should be the word that the user is requesting to search
@@ -43,4 +44,6 @@ class HomeFragment : Fragment() {
     fun favorite(){
         //Just a simple check or uncheck for the favorite
     }
+
+
 }

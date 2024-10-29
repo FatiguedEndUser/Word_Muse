@@ -7,6 +7,7 @@
 
     <data>
         <!-- Need to implement bindings here for search functionality and adding favorites -->
+        <variable name="searchText" type="String" />
     </data>
 
 
@@ -27,6 +28,7 @@
 
     <SearchView
         android:id="@+id/searchView"
+        android:text="@{}"
         android:layout_width="409dp"
         android:layout_height="50dp"
         app:layout_constraintStart_toStartOf="parent"

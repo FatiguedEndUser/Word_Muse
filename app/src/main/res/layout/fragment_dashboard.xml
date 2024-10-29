@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <!-- Setup Data bindings for favorites aswell as change this to the favorites tab in name and in nav bar -->
+        <!-- Setup Data bindings for favorites as well as change this to the favorites tab in name and in nav bar -->
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
