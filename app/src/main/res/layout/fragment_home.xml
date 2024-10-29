@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <!-- Need to implement bindings here for search functionality and adding favorites -->
     </data>
 
 
@@ -42,3 +42,4 @@
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
