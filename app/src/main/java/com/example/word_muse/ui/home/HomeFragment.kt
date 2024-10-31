@@ -9,7 +9,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.word_muse.databinding.FragmentHomeBinding
-import  android.widget.SearchView
+import com.example.word_muse.databinding.FragmentHomeBinding.inflate
+
 
 class HomeFragment : Fragment() {
 
@@ -22,7 +23,11 @@ class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        _binding = inflate(inflater, container, false)
+        _binding = inflate(
+            inflater,
+            container,
+            false
+        )
         val root: View = binding.root
         return root
     }

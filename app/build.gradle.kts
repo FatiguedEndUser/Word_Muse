@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.word_muse"
-        minSdk = 24
+        minSdk = 28
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -34,13 +34,12 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        dataBinding = true;
         viewBinding = true
     }
 }
 
 dependencies {
-//    implementation(com.squareup.retrofit2:retrofit:2.9.0)
-//    implementation(com.squareup.retrofit2:converter-gson:2.9.0)
 
     //Default implementations
     implementation(libs.androidx.core.ktx)
@@ -53,6 +52,7 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.sqlite.android)
     implementation(libs.androidx.sqlite.ktx)
+    implementation(libs.car.ui.lib)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

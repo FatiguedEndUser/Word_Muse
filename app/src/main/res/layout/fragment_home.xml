@@ -6,7 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <!-- Need to implement bindings here for search functionality and adding favorites -->
         <variable name="searchText" type="String" />
     </data>
 
