@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.example.word_muse.databinding.FragmentHomeBinding
 import com.example.word_muse.databinding.FragmentHomeBinding.inflate
@@ -43,7 +45,7 @@ class HomeFragment : Fragment() {
     fun search(word: String){
         //Call the api to make the search using
         //https://api.dictionaryapi.dev/api/v2/entries/en/<word> "<word>" should be the word that the user is requesting to search
-
+        val binding: FragmentHomeBinding;
     }
 
     fun favorite(){
