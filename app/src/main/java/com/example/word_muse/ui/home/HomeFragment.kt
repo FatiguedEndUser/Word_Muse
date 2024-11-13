@@ -52,11 +52,13 @@ class HomeFragment : Fragment() {
 
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
+                //GET word
+                //Most likely will need parser for json format from GET request
                 return true
             }
 
             override fun onQueryTextChange(newText: String): Boolean {
-                //    adapter.getFilter().filter(newText);
+                //Clear results
                 return false
             }
         })
