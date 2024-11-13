@@ -34,6 +34,9 @@ class DashboardFragment : Fragment() {
 
     //Pull list of favorites
     fun pull_favorties(){
+        //Need an adapter of list
+        //add a button too each item in the recycle view
+        //give the button a an on evenlistner
         //binding.recycleView.
     }
 
