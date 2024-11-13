@@ -6,12 +6,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
+import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.example.word_muse.databinding.FragmentHomeBinding
 import com.example.word_muse.databinding.FragmentHomeBinding.inflate
+import android.widget.SearchView;
 
 
 class HomeFragment : Fragment() {
@@ -42,10 +42,24 @@ class HomeFragment : Fragment() {
 
     //Calling view model
 
-    fun search(word: String){
+    fun search(query: String){
         //Call the api to make the search using
         //https://api.dictionaryapi.dev/api/v2/entries/en/<word> "<word>" should be the word that the user is requesting to search
-        val binding: FragmentHomeBinding;
+
+        val url = "https://api.dictionaryapi.dev/api/v2/entries/en/"
+        var searchBar: SearchView? = null
+        var adapter: ArrayAdapter<String>? = null
+
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                //    adapter.getFilter().filter(newText);
+                return false
+            }
+        })
     }
 
     fun favorite(){
