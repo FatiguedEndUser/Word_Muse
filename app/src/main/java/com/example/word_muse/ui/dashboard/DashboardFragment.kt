@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.word_muse.databinding.FragmentDashboardBinding
@@ -33,10 +34,11 @@ class DashboardFragment : Fragment() {
 
     //Pull list of favorites
     fun pull_favorties(){
-
+        //binding.recycleView.
     }
 
     fun unfavorite (){
         //Uncheck a favorite to remove
+
     }
 }

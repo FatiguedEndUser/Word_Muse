@@ -23,8 +23,9 @@
         app:menu="@menu/bottom_nav_menu" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="412dp"
-        android:layout_height="676dp"
+        android:id="@+id/recycleView"
+        android:layout_width="372dp"
+        android:layout_height="675dp"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
