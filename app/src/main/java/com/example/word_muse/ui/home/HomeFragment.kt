@@ -13,7 +13,6 @@ import com.example.word_muse.databinding.FragmentHomeBinding
 import com.example.word_muse.databinding.FragmentHomeBinding.inflate
 import android.widget.SearchView;
 import retrofit2.http.GET
-import com.example.word_muse.ui.home.ApiService as ApiService1
 
 
 class HomeFragment : Fragment(){
@@ -69,5 +68,11 @@ class HomeFragment : Fragment(){
 
     fun favorite(){
         //Just a simple check or uncheck for the favorite
+    }
+}
+
+object ApiService{
+    val retrofitService: ApiService by lazy {
+
     }
 }
