@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.provider.BaseColumns
 
 //REFERENCE: https://developer.android.com/training/data-storage/sqlite#kotlin
+//TODO: TABLE FOR USER AND FAVORITES CHECK OUT GEEKS FOR GEEKS SQLITE ANDROID TUTORIALS
 
 class DBConnection(context: Context) : SQLiteOpenHelper(context, "WordMuseDB", null, DATABASE_VERSION) {
     object FeedReaderContract {
