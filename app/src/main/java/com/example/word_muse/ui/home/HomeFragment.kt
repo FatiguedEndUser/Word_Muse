@@ -12,8 +12,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.word_muse.databinding.FragmentHomeBinding
 import com.example.word_muse.databinding.FragmentHomeBinding.inflate
 import android.widget.SearchView;
-import retrofit2.http.GET
-
+import com.example.word_muse.DictionaryAPI
+import com.example.word_muse.SearchApiService
 
 class HomeFragment : Fragment(){
 
@@ -53,8 +53,7 @@ class HomeFragment : Fragment(){
 
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
-                //GET word
-                //Most likely will need parser for json format from GET request
+                DictionaryAPI.retrofitService.search(query)
 
                 return true
             }
@@ -68,11 +67,5 @@ class HomeFragment : Fragment(){
 
     fun favorite(){
         //Just a simple check or uncheck for the favorite
-    }
-}
-
-object ApiService{
-    val retrofitService: ApiService by lazy {
-
     }
 }

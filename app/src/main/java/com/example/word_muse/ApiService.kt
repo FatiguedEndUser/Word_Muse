@@ -18,3 +18,10 @@ interface SearchApiService{
     fun search(query: String): String
 }
 
+public object DictionaryAPI{
+    val retrofitService: SearchApiService by lazy {
+        retrofit.create(SearchApiService::class.java)
+    }
+}
+
+
