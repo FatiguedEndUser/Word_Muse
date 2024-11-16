@@ -10,6 +10,8 @@ import com.example.word_muse.DictionaryAPI
 import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() {
+    //State
+    var searchState: String? = null
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is home Fragment"
@@ -23,6 +25,7 @@ class HomeViewModel : ViewModel() {
     private fun getSearch(query: String){
         viewModelScope.launch {
             val listResult = DictionaryAPI.retrofitService.search(query)
+            searchState = listResult
         }
     }
 
