@@ -8,24 +8,39 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.word_muse.DictionaryAPI
 import kotlinx.coroutines.launch
+import java.io.IOException
+
+sealed interface SearchState{
+    data class Success(val word: String): SearchState
+    object Error: SearchState
+    object Loading: SearchState
+}
 
 class HomeViewModel : ViewModel() {
     //State
-    var searchState: String? = null
-
+    private var searchState: String? = null
     private val _text = MutableLiveData<String>().apply {
         value = "This is home Fragment"
     }
     val text: LiveData<String> = _text
 
     //var user: User = User("name", "pass", "email")
-    //api calls for searching
-    //get calls for words
     //methods to translate json into models
+
+    //Search Function
+    private fun search(){
+
+    }
+
+    //GET SEARCH
     private fun getSearch(query: String){
-        viewModelScope.launch {
-            val listResult = DictionaryAPI.retrofitService.search(query)
-            searchState = listResult
+        try {
+            viewModelScope.launch {
+                val listResult = DictionaryAPI.retrofitService.search(query)
+                SearchState.Success(listResult)
+            }
+        }catch (e: IOException){
+            SearchState.Error
         }
     }
 
