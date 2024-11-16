@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ListView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.word_muse.databinding.FragmentHomeBinding
@@ -41,31 +42,29 @@ class HomeFragment : Fragment(){
     }
 
 
-    //Calling view model
+    //Is this supposed to be in the view model kotlin file?
+//    fun search(query: String){
+//        //Call the api to make the search using
+//        //https://api.dictionaryapi.dev/api/v2/entries/en/<word> "<word>" should be the word that the user is requesting to search
+//
+//        val url = "https://api.dictionaryapi.dev/api/v2/entries/en/"
+//        var searchBar: SearchView? = null
+//        var adapter: ArrayAdapter<String>? = null
+//
+//        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+//            override fun onQueryTextSubmit(query: String): Boolean {
+//                DictionaryAPI.retrofitService.search(query)
+//                return true
+//            }
+//
+//            override fun onQueryTextChange(newText: String): Boolean {
+//                //Clear results
+//                return false
+//            }
+//        })
+//    }
 
-    fun search(query: String){
-        //Call the api to make the search using
-        //https://api.dictionaryapi.dev/api/v2/entries/en/<word> "<word>" should be the word that the user is requesting to search
-
-        val url = "https://api.dictionaryapi.dev/api/v2/entries/en/"
-        var searchBar: SearchView? = null
-        var adapter: ArrayAdapter<String>? = null
-
-        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String): Boolean {
-                DictionaryAPI.retrofitService.search(query)
-
-                return true
-            }
-
-            override fun onQueryTextChange(newText: String): Boolean {
-                //Clear results
-                return false
-            }
-        })
-    }
-
-    fun favorite(){
-        //Just a simple check or uncheck for the favorite
-    }
+//    fun favorite(){
+//        //Just a simple check or uncheck for the favorite
+//    }
 }

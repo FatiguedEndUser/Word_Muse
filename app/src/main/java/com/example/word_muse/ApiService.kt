@@ -14,8 +14,9 @@ private val retrofit = Retrofit
 
 
 interface SearchApiService{
+    //Async
     @GET("word")
-    fun search(query: String): String
+    suspend fun search(query: String): String
 }
 
 public object DictionaryAPI{
