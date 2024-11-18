@@ -18,10 +18,12 @@ sealed interface SearchState{
 
 class HomeViewModel : ViewModel() {
     //State
-    private var searchState: String? = null
+    private lateinit var searchState: SearchState
+
     private val _text = MutableLiveData<String>().apply {
         value = "This is home Fragment"
     }
+
     val text: LiveData<String> = _text
 
     //var user: User = User("name", "pass", "email")
@@ -37,7 +39,7 @@ class HomeViewModel : ViewModel() {
         try {
             viewModelScope.launch {
                 val listResult = DictionaryAPI.retrofitService.search(query)
-                SearchState.Success(listResult)
+                searchState = SearchState.Success(listResult)
             }
         }catch (e: IOException){
             SearchState.Error
