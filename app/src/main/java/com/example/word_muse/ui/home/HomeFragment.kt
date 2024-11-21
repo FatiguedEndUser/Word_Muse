@@ -6,15 +6,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.ListView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.word_muse.databinding.FragmentHomeBinding
 import com.example.word_muse.databinding.FragmentHomeBinding.inflate
-import android.widget.SearchView;
-import com.example.word_muse.DictionaryAPI
-import com.example.word_muse.SearchApiService
+import java.lang.reflect.Modifier
 
 class HomeFragment : Fragment(){
 
@@ -41,6 +37,13 @@ class HomeFragment : Fragment(){
         _binding = null
     }
 
+    fun showResult(searchState: SearchState, modifier: Modifier){
+        when(searchState){
+            is SearchState.Success -> (searchState.word)
+            SearchState.Error -> TODO()
+            SearchState.Loading -> TODO()
+        }
+    }
 
 //    //Is this supposed to be in the view model kotlin file?
 //    suspend fun search(query: String){

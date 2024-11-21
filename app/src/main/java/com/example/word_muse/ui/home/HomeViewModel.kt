@@ -33,13 +33,13 @@ class HomeViewModel : ViewModel() {
 
     //GET SEARCH
     private fun getSearch(query: String){
-        try {
-            viewModelScope.launch {
+        viewModelScope.launch {
+                searchState = try {
                 val listResult = DictionaryAPI.retrofitService.search(query)
-                searchState = SearchState.Success(listResult)
-            }
-        }catch (e: IOException){
-            SearchState.Error
+                SearchState.Success(listResult)
+                }catch (e: IOException){
+                    SearchState.Error
+                }
         }
     }
 }
