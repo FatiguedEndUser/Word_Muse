@@ -42,8 +42,8 @@ class HomeFragment : Fragment(){
     }
 
 
-    //Is this supposed to be in the view model kotlin file?
-//    fun search(query: String){
+//    //Is this supposed to be in the view model kotlin file?
+//    suspend fun search(query: String){
 //        //Call the api to make the search using
 //        //https://api.dictionaryapi.dev/api/v2/entries/en/<word> "<word>" should be the word that the user is requesting to search
 //
@@ -64,7 +64,4 @@ class HomeFragment : Fragment(){
 //        })
 //    }
 
-//    fun favorite(){
-//        //Just a simple check or uncheck for the favorite
-//    }
 }

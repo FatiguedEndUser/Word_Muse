@@ -2,6 +2,8 @@
 
 package com.example.word_muse.ui.home
 
+import android.widget.ArrayAdapter
+import android.widget.SearchView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -29,11 +31,6 @@ class HomeViewModel : ViewModel() {
     //var user: User = User("name", "pass", "email")
     //methods to translate json into models
 
-    //Search Function
-    private fun search(){
-
-    }
-
     //GET SEARCH
     private fun getSearch(query: String){
         try {
@@ -45,5 +42,4 @@ class HomeViewModel : ViewModel() {
             SearchState.Error
         }
     }
-
 }
