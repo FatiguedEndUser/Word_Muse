@@ -19,7 +19,7 @@ object RetrofitClient {
         .build()
 
 
-    val wordApiService: SearchApiService by lazy{
-
+    val searchApiService: SearchApiService by lazy{
+        Retrofit.Builder()
     }
 }
