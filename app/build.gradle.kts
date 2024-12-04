@@ -41,12 +41,23 @@ android {
 
 dependencies {
     //Web services
+
     // Retrofit
     implementation(libs.retrofit)
     // Retrofit with Scalar Converter
     implementation(libs.converter.scalars)
-    //Default implementations
 
+    //Moshi
+    implementation(libs.moshi)
+    implementation(libs.moshi.kotlin)
+    implementation(libs.converter.moshi)
+    implementation(libs.loggin.interceptor)
+
+    //AndroidX
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.runtime)
+
+    //Default implementations
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
