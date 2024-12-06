@@ -51,7 +51,10 @@ dependencies {
     implementation(libs.moshi)
     implementation(libs.moshi.kotlin)
     implementation(libs.converter.moshi)
-    implementation(libs.loggin.interceptor)
+    implementation(libs.moshi.kotlin.codegen)
+    implementation (libs.retrofit2.converter.moshi)
+    implementation(libs.logging.interceptor)
+
 
     //AndroidX
     implementation(libs.androidx.lifecycle.viewmodel.compose)

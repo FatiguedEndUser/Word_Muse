@@ -3,14 +3,16 @@ package com.example.word_muse
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
-import retrofit2.Retrofit
-import retrofit2.converter.scalars.ScalarsConverterFactory
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
+
 
 object RetrofitClient {
     private val URL = "https://api.dictionaryapi.dev/api/v2/entries/"
-    private val logging = HttpLogginInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-    private val okHttpClient = OkHttpClient.Builder
+    private val logging = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+
+    private val okHttpClient = OkHttpClient.Builder()
         .addInterceptor(logging)
         .build()
 
@@ -21,5 +23,10 @@ object RetrofitClient {
 
     val searchApiService: SearchApiService by lazy{
         Retrofit.Builder()
+            .baseUrl(URL)
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .client(okHttpClient)
+            .build()
+            .create(SearchApiService::class.java)
     }
 }
