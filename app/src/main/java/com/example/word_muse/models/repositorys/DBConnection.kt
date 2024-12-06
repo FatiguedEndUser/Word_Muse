@@ -17,21 +17,21 @@ class DBConnection(context: Context) : SQLiteOpenHelper(context, "WordMuseDB", n
         }
     }
 
-    private val SQL_CREATE_ENTRIES =
+    private val SQLCREATEENTRIES =
         "CREATE TABLE ${FeedReaderContract.FeedEntry.TABLE_NAME} (" +
                 "${BaseColumns._ID} INTEGER PRIMARY KEY," +
                 "${FeedReaderContract.FeedEntry.COLUMN_NAME_TITLE} TEXT," +
                 "${FeedReaderContract.FeedEntry.COLUMN_NAME_SUBTITLE} TEXT)"
 
-    private val SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS ${FeedReaderContract.FeedEntry.TABLE_NAME}"
+    private val SQLDELETEENTRIES = "DROP TABLE IF EXISTS ${FeedReaderContract.FeedEntry.TABLE_NAME}"
 
     override fun onCreate(db: SQLiteDatabase) {
-        db.execSQL(SQL_CREATE_ENTRIES)
+        db.execSQL(SQLCREATEENTRIES)
     }
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         // This database is only a cache for online data, so its upgrade policy is
         // to simply to discard the data and start over
-        db.execSQL(SQL_DELETE_ENTRIES)
+        db.execSQL(SQLDELETEENTRIES)
         onCreate(db)
     }
     override fun onDowngrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {

@@ -2,15 +2,12 @@
 
 package com.example.word_muse.ui.home
 
-import android.widget.ArrayAdapter
-import android.widget.SearchView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.word_muse.RetrofitClient
 import kotlinx.coroutines.launch
-import java.io.IOException
 
 sealed interface SearchState{
     data class Success(val word: String): SearchState

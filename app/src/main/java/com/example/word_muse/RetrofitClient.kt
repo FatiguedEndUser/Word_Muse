@@ -9,7 +9,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 
 object RetrofitClient {
-    private val URL = "https://api.dictionaryapi.dev/api/v2/entries/"
+    private const val URL = "https://api.dictionaryapi.dev/api/v2/entries/"
     private val logging = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
     private val okHttpClient = OkHttpClient.Builder()

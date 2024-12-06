@@ -2,9 +2,9 @@
 
 package com.example.word_muse.models
 
-class DictonaryData : ArrayList<DictonaryDataItem>()
+class DictionaryData : ArrayList<DictionaryDataItem>()
 
-data class DictonaryDataItem(
+data class DictionaryDataItem(
     val meanings: List<Meaning>,
     val origin: String,
     val phonetic: String,

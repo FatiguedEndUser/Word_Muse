@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.word_muse.databinding.FragmentDashboardBinding
@@ -20,7 +18,7 @@ class DashboardFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        val dashboardViewModel = ViewModelProvider(this).get(DashboardViewModel::class.java)
+        val dashboardViewModel = ViewModelProvider(this)[DashboardViewModel::class.java]
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -33,7 +31,7 @@ class DashboardFragment : Fragment() {
     }
 
     //Pull list of favorites
-    fun pull_favorties(){
+    fun pullFavorties(){
         //Need an adapter of list
         //add a button too each item in the recycle view
         //give the button a an on evenlistner
