@@ -37,13 +37,13 @@ class HomeFragment : Fragment(){
         _binding = null
     }
 
-    fun showResult(searchState: SearchState, modifier: Modifier){
-        when(searchState){
-            is SearchState.Success -> (searchState.word)
-            SearchState.Error -> TODO()
-            SearchState.Loading -> TODO()
-        }
-    }
+//    fun showResult(searchState: SearchState, modifier: Modifier){
+//        when(searchState){
+//            is SearchState.Success -> (searchState.word)
+//            SearchState.Error -> TODO()
+//            SearchState.Loading -> TODO()
+//        }
+//    }
 
 //    //Is this supposed to be in the view model kotlin file?
 //    suspend fun search(query: String){

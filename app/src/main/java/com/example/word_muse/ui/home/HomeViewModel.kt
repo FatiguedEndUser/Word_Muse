@@ -8,7 +8,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.word_muse.DictionaryAPI
+import com.example.word_muse.RetrofitClient
 import kotlinx.coroutines.launch
 import java.io.IOException
 
@@ -28,18 +28,16 @@ class HomeViewModel : ViewModel() {
 
     val text: LiveData<String> = _text
 
-    //var user: User = User("name", "pass", "email")
-    //methods to translate json into models
+    private val _wordData = MutableLiveData("No Data")
+    val wordData: LiveData<String> get() = _wordData
 
-    //GET SEARCH
-    private fun getSearch(query: String){
+    init {
         viewModelScope.launch {
-                searchState = try {
-                val listResult = DictionaryAPI.retrofitService.search(query)
-                SearchState.Success(listResult)
-                }catch (e: IOException){
-                    SearchState.Error
-                }
+            getSearch()
         }
+    }
+
+    private suspend fun getSearch(){
+        _wordData.value = RetrofitClient.searchApiService.search().toString()
     }
 }
