@@ -8,7 +8,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 import okhttp3.logging.HttpLoggingInterceptor
 
 object RetrofitClient {
-    private val URL = "https://api.dictionaryapi.dev/api/v2/entries/en/"
+    private val URL = "https://api.dictionaryapi.dev/api/v2/entries/"
     private val logging = HttpLogginInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     private val okHttpClient = OkHttpClient.Builder
         .addInterceptor(logging)

@@ -4,7 +4,7 @@ import retrofit2.http.GET
 
 interface SearchApiService{
     //Async
-    @GET("word")
+    @GET("en/")
     suspend fun search(query: String): List<String>
 }
 
