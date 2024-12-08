@@ -9,12 +9,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.word_muse.RetrofitClient
 import kotlinx.coroutines.launch
 
-sealed interface SearchState{
-    data class Success(val word: String): SearchState
-    object Error: SearchState
-    object Loading: SearchState
-}
-
 class HomeViewModel : ViewModel() {
     //State
     private lateinit var searchState: SearchState
@@ -33,8 +27,11 @@ class HomeViewModel : ViewModel() {
             getSearch()
         }
     }
+//  TODO: Figure out how to append the word to the end of the endpoint for the api call.
+//        pretty sure the app is crashing because the endpoint is pointing to en/
+//        we need too follow up with that and attach
+    private suspend fun getSearch(word: String? = null){
 
-    private suspend fun getSearch(){
         _wordData.value = RetrofitClient.searchApiService.search().toString()
     }
 }
