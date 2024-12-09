@@ -9,7 +9,7 @@ interface SearchApiService{
     //Async
     @GET("en/")
     suspend fun search(
-        @Query("Word") word: String? = null
+        @Query("<YOUR_WORD>") word: String? = null
     ): List<DictionaryDataItem>
 }
 
