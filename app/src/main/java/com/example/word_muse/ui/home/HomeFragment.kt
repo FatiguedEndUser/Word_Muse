@@ -37,34 +37,16 @@ class HomeFragment : Fragment(){
         _binding = null
     }
 
-//    fun showResult(searchState: SearchState, modifier: Modifier){
-//        when(searchState){
-//            is SearchState.Success -> (searchState.word)
-//            SearchState.Error -> TODO()
-//            SearchState.Loading -> TODO()
-//        }
-//    }
 
-//    //Is this supposed to be in the view model kotlin file?
-//    suspend fun search(query: String){
-//        //Call the api to make the search using
-//        //https://api.dictionaryapi.dev/api/v2/entries/en/<word> "<word>" should be the word that the user is requesting to search
+
+//    //API Call
+//    private val _wordData = MutableLiveData("No Data")
+//    val wordData: LiveData<String> get() = _wordData
 //
-//        val url = "https://api.dictionaryapi.dev/api/v2/entries/en/"
-//        var searchBar: SearchView? = null
-//        var adapter: ArrayAdapter<String>? = null
-//
-//        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-//            override fun onQueryTextSubmit(query: String): Boolean {
-//                DictionaryAPI.retrofitService.search(query)
-//                return true
-//            }
-//
-//            override fun onQueryTextChange(newText: String): Boolean {
-//                //Clear results
-//                return false
-//            }
-//        })
+//    //TODO: Figure out how to append the word to the end of the endpoint for the api call.
+//    //      we need too follow up with that and attach
+//    private suspend fun getSearch(word: String? = null){
+//        _wordData.value = RetrofitClient.searchApiService.search(word).toString()
 //    }
 
 }

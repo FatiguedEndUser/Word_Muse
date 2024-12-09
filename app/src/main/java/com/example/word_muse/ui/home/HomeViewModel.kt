@@ -5,9 +5,7 @@ package com.example.word_muse.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.example.word_muse.RetrofitClient
-import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() {
     private val _text = MutableLiveData<String>().apply {
@@ -26,6 +24,7 @@ class HomeViewModel : ViewModel() {
 //            getSearch()
 //        }
 //    }
+
 
 //  TODO: Figure out how to append the word to the end of the endpoint for the api call.
 //        we need too follow up with that and attach
