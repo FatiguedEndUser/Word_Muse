@@ -40,8 +40,6 @@ android {
 }
 
 dependencies {
-    //Web services
-
     // Retrofit
     implementation(libs.retrofit)
     // Retrofit with Scalar Converter
@@ -58,6 +56,10 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.runtime)
 
+    //Room
+    implementation(libs.room.ktx)
+    implementation(libs.androidx.room.common)
+
     //Default implementations
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -70,6 +72,7 @@ dependencies {
     implementation(libs.androidx.sqlite.android)
     implementation(libs.androidx.sqlite.ktx)
     implementation(libs.car.ui.lib)
+    implementation(libs.androidx.room.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

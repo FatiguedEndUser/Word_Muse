@@ -1,6 +1,4 @@
-//
-
-package com.example.word_muse.models
+package com.example.word_muse.API
 
 class DictionaryData : ArrayList<DictionaryDataItem>()
 

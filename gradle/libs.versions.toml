@@ -25,6 +25,8 @@ runtime = "1.5.4"
 sqliteAndroid = "2.5.0-alpha10"
 sqliteKtx = "2.4.0"
 carUiLib = "2.6.0"
+roomCommon = "2.6.1"
+roomKtx = "2.6.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -52,8 +54,11 @@ moshi-kotlin-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", ver
 moshi-v1120 = { module = "com.squareup.moshi:moshi", version.ref = "moshiVersion" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "converterScalars" }
 retrofit2-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "converterMoshiVersion" }
+room-ktx = { module = "android.room:room-ktx" }
 x_api-dictionaryapi-dev_api_v2 = { module = "https://api.dictionaryapi.dev/api/v2" }
 car-ui-lib = { group = "com.android.car.ui", name = "car-ui-lib", version.ref = "carUiLib" }
+androidx-room-common = { group = "androidx.room", name = "room-common", version.ref = "roomCommon" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "roomKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

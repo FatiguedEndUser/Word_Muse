@@ -1,7 +1,6 @@
-package com.example.word_muse
+package com.example.word_muse.API
 
 
-import com.example.word_muse.models.DictionaryDataItem
 import retrofit2.http.GET
 import retrofit2.http.Query
 
