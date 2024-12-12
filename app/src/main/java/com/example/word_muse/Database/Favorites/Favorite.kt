@@ -1,4 +1,4 @@
-package com.example.word_muse.models.Database.Favorites
+package com.example.word_muse.Database.Favorites
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.word_muse.API.DictionaryDataItem
