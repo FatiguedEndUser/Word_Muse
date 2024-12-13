@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.word_muse.databinding.FragmentHomeBinding
@@ -39,7 +38,7 @@ class HomeFragment : Fragment(){
 //--------------------------------------------------------------------------------------------------------------------
 
     suspend fun searchForWord(){
-        var word = binding.searchView.query.toString()
+
     }
 
 

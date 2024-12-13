@@ -7,5 +7,5 @@ import com.example.word_muse.API.DictionaryDataItem
 data class Favorite(
     val favoriteWord: DictionaryDataItem,
     @PrimaryKey(autoGenerate = true)
-    val id: Int
+    val id: Int = 0
 )
