@@ -5,7 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.example.word_muse.API.DictionaryDataItem
-import com.example.word_muse.Database.Favorites.Favorite
+import com.example.word_muse.Database.Users.Favorite
 import kotlinx.coroutines.flow.Flow
 
 @Dao

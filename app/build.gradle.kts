@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.android) version "2.1.0"
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -57,8 +58,10 @@ dependencies {
     implementation(libs.androidx.runtime)
 
     //Room
-    implementation(libs.room.ktx)
+    implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.common)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler.v250)
 
     //Default implementations
     implementation(libs.androidx.core.ktx)
@@ -72,7 +75,6 @@ dependencies {
     implementation(libs.androidx.sqlite.android)
     implementation(libs.androidx.sqlite.ktx)
     implementation(libs.car.ui.lib)
-    implementation(libs.androidx.room.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

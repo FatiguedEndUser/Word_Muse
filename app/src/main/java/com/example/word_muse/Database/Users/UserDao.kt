@@ -13,8 +13,8 @@ interface UserDao {
     @Query("SELECT * FROM user WHERE id IN (:userIds)")
     suspend fun loadByIds(userIds: IntArray): List<User>
 
-    @Insert
-    fun insertAll(vararg users: User)
+    //@Insert
+    //fun insertAll(vararg users: Array<User>)
 
     @Delete
     fun delete(user: User)

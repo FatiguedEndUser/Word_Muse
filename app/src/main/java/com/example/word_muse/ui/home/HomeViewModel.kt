@@ -1,4 +1,5 @@
-// Repo/Helper functions/DB
+//XML/Face
+//Call the fragment
 
 package com.example.word_muse.ui.home
 
