@@ -1,6 +1,5 @@
 package com.example.word_muse.Database.Users
 
-import User
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert

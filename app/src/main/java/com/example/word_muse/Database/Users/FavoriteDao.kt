@@ -1,19 +1,20 @@
-package com.example.word_muse.Database.Favorites
+package com.example.word_muse.Database.Users
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import androidx.room.Upsert
+import com.example.word_muse.API.DictionaryDataItem
+import com.example.word_muse.Database.Favorites.Favorite
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface FavoriteDao {
-    @Upsert
-    suspend fun upsertFavorite(favorite: Favorite)
+    @Insert
+    suspend fun insertFavorite(favorite: Favorite)
 
     @Delete
-    suspend fun deleteFavorite(favorite: Favorite)
+    suspend fun deleteFavorite(favorite: DictionaryDataItem)
 
     @Query("SELECT * FROM favorite ORDER BY favoriteWord ASC")
     fun getFavoritesByAlpha(): Flow<List<Favorite>>
