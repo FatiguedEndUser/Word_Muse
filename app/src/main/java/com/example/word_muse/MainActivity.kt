@@ -9,7 +9,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.word_muse.databinding.ActivityMainBinding
 import androidx.room.Room
-import com.example.word_muse.Database.Users.Database
 
 
 class MainActivity : AppCompatActivity() {
@@ -21,13 +20,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
-            val database: Database = Room.databaseBuilder(
-                applicationContext,
-                Database::class.java,
-                "Database"
-            ).build()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
