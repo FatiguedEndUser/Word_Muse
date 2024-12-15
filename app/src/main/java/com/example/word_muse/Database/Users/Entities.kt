@@ -15,5 +15,5 @@ data class User(
 @Entity(tableName = "Favorite")
 data class Favorite(
     @PrimaryKey val id: Int,
-    @ColumnInfo(name = "word") val word: DictionaryDataItem
+    @ColumnInfo(name = "word") val word: String
 )

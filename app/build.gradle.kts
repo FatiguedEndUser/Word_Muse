@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android) version "2.1.0"
-    id("com.google.devtools.ksp")
+    id("com.google.devtools.ksp") version "2.1.0-1.0.29"
 }
 
 android {
@@ -57,12 +57,6 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.runtime)
 
-    //Room
-    implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.common)
-    implementation(libs.androidx.room.ktx)
-    ksp(libs.androidx.room.compiler.v250)
-
     //Default implementations
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -78,4 +72,16 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+
+
+    //Room
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.common)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler.v250)
+    //annotationProcessor(libs.androidx.room.compiler)
+    implementation(libs.kotlinx.coroutines.android)
+
+
 }

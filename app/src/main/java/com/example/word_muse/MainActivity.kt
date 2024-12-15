@@ -11,6 +11,7 @@ import com.example.word_muse.databinding.ActivityMainBinding
 import androidx.room.Room
 import com.example.word_muse.Database.Users.Database
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -21,15 +22,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        try {
-            database = Room.databaseBuilder(
+
+            val database: Database = Room.databaseBuilder(
                 applicationContext,
                 Database::class.java,
                 "Database"
             ).build()
-        }catch(e: Exception){
-            print(e)
-        }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
