@@ -2,6 +2,7 @@ package com.example.word_muse.Database
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
@@ -29,14 +30,55 @@ class DatabaseHelper(context: Context, factory: SQLiteDatabase.CursorFactory?): 
         db?.execSQL("DROP TABLE IF EXIST" + FAVORITE_TABLE)
     }
 
+    //Adding to our database
     fun addUser(username: String, password: String){
         val values = ContentValues()
 
+        //Inserting in k-v pair
+        values.put(USERNAME_COL, username)
+        values.put(PASSWORD_COL, password)
+
+        //Writable variable of our database
+        val db = this.writableDatabase
+
+        //Inserting values into the database
+        db.insert(USER_TABLE, null, values)
+
+        //Closing database
+        db.close()
     }
 
     fun addFavorite(word: String){
         val values = ContentValues()
 
+        //Inserting in k-v pair
+        values.put(WORD_COL, word)
+
+        //Writable variable of our database
+        val db = this.writableDatabase
+
+        //Inserting values into the database
+        db.insert(FAVORITE_TABLE, null, values)
+
+        //Closing database
+        db.close()
+    }
+
+    //Getting data from our database
+    fun getUser(): Cursor?{
+        //Creating readable form of our database
+        val db = this.readableDatabase
+
+        //Returning our values from the database
+        return db.rawQuery("SELECT * FROM $USER_TABLE", null)
+    }
+
+    fun getFavorite(): Cursor?{
+        //Creating readable form of our database
+        val db = this.readableDatabase
+
+        //Returning our values from the database
+        return db.rawQuery("SELECT * FROM $FAVORITE_TABLE", null)
     }
 
     //LOCAL VARS
