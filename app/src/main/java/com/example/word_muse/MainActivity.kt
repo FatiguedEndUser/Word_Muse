@@ -1,18 +1,16 @@
 package com.example.word_muse
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.word_muse.databinding.ActivityMainBinding
-import androidx.room.Room
 import com.example.word_muse.ui.favorite.FavoriteFragment
 import com.example.word_muse.ui.home.HomeFragment
 import com.example.word_muse.ui.users.UserFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
