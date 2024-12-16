@@ -1,17 +1,15 @@
 package com.example.word_muse.ui.login
 
 import android.os.Bundle
-import android.view.AbsSavedState
 import android.view.LayoutInflater
-import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentContainer
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import com.example.word_muse.databinding.FragmentLoginBinding
+import com.example.word_muse.databinding.FragmentLoginBinding.inflate
 
-class LoginFragment{
+class LoginFragment : Fragment(){
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
@@ -21,7 +19,18 @@ class LoginFragment{
         savedInstanceState: Bundle?
     ): View{
         val loginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        _binding = inflate(
+            inflater,
+            container,
+            false
+        )
+
         val root: View = binding.root
         return root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
