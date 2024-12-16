@@ -34,5 +34,6 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+        //TODO: Call the database and create events. However do we do those here of do we do those in the home section and or login sectionus
     }
 }

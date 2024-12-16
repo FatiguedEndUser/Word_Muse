@@ -35,4 +35,5 @@ class LoginFragment : Fragment(){
     }
 
     //BINDING METHODS
+
 }

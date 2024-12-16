@@ -16,9 +16,10 @@
         app:menu="@menu/bottom_nav_menu" />
 
     <SearchView
+        android:id="@+id/searchview"
         android:layout_width="409dp"
         android:layout_height="57dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="1dp"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
