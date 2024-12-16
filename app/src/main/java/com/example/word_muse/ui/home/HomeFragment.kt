@@ -7,7 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
+import com.example.word_muse.API.RetrofitClient
 import com.example.word_muse.databinding.FragmentHomeBinding
 import com.example.word_muse.databinding.FragmentHomeBinding.inflate
 
@@ -35,22 +38,22 @@ class HomeFragment : Fragment(){
         _binding = null
     }
 
-//--------------------------------------------------------------------------------------------------------------------
+//BINDING METHODS
 
-//    suspend fun searchForWord(){
-//
-//    }
+    suspend fun searchForWord(){
+
+    }
 
 
 
-//    //API Call
-//    private val _wordData = MutableLiveData("No Data")
-//    val wordData: LiveData<String> get() = _wordData
-//
-//    //TODO: Figure out how to append the word to the end of the endpoint for the api call.
-//    //      we need too follow up with that and attach
-//    private suspend fun getSearch(word: String? = null){
-//        _wordData.value = RetrofitClient.searchApiService.search(word).toString()
-//    }
+    //API Call
+    private val _wordData = MutableLiveData("No Data")
+    val wordData: LiveData<String> get() = _wordData
+
+    //TODO: Figure out how to append the word to the end of the endpoint for the api call.
+    //      we need too follow up with that and attach
+    private suspend fun getSearch(word: String? = null){
+        _wordData.value = RetrofitClient.searchApiService.search(word).toString()
+    }
 
 }
