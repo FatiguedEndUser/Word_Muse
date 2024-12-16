@@ -3,6 +3,7 @@ package com.example.word_muse
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -39,6 +40,10 @@ class MainActivity : AppCompatActivity() {
 
         //Setting up switching between navs
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.nav_view)
+
+        val home = HomeFragment()
+        val favorite = FavoriteFragment()
+        val user = UserFragment()
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
