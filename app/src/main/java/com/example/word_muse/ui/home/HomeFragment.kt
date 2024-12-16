@@ -21,7 +21,11 @@ class HomeFragment : Fragment(){
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = inflate(
@@ -39,12 +43,6 @@ class HomeFragment : Fragment(){
     }
 
 //BINDING METHODS
-
-    suspend fun searchForWord(){
-
-    }
-
-
 
     //API Call
     private val _wordData = MutableLiveData("No Data")
