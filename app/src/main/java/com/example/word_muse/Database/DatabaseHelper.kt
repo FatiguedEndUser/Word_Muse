@@ -1,24 +1,58 @@
 package com.example.word_muse.Database
 
+import android.content.ContentValues
+import android.content.Context
 import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteOpenHelper
 
-class DatabaseHelper {
+class DatabaseHelper(context: Context, factory: SQLiteDatabase.CursorFactory?): SQLiteOpenHelper(context, DATABASE_NAME, factory, DATABASE_VERSION) {
+
+    override fun onCreate(db: SQLiteDatabase?) {
+        //CREATE USER TABLE
+        db?.execSQL(
+            "CREATE TABLE " + USER_TABLE + " ("
+                    + UID_COL + " INTEGER PRIMARY KEY, " +
+                    USERNAME_COL + " TEXT," +
+                    PASSWORD_COL + " TEXT" + ")"
+        )
+
+        //CREATE FAVORITE TABLE
+        db?.execSQL(
+            "CREATE TABLE " + FAVORITE_TABLE + " ("
+                    + FID_COL + " INTEGER PRIMARY KEY, " +
+                    WORD_COL + " TEXT,"
+        )
+    }
+
+    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+        db?.execSQL("DROP TABLE IF EXISTS" + USER_TABLE)
+        db?.execSQL("DROP TABLE IF EXIST" + FAVORITE_TABLE)
+    }
+
+    fun addUser(username: String, password: String){
+        val values = ContentValues()
+
+    }
+
+    fun addFavorite(word: String){
+        val values = ContentValues()
+
+    }
+
+    //LOCAL VARS
     companion object{
-        const val DATABASE_NAME = "Database.db"
-        const val DATABASE_VERSION = 1
-    }
+        private val DATABASE_NAME = "mydb"
+        private val DATABASE_VERSION = 1
 
-    fun onCreate(db: SQLiteDatabase){
-        //Create table and queries
-        db.execSQL(
-            "CREATE TABLE USERS (_id INTEGER PRIMARY KEY, username TEXT, password TEXT)"
-        )
-        db.execSQL(
-            "CREATE TABLE FAVORITE (_id INTEGER PRIMARY KEY, word TEXT)"
-        )
-    }
+        //USER table
+        private val USER_TABLE = "User"
+        val UID_COL = "id"
+        val USERNAME_COL = "username"
+        val PASSWORD_COL = "password"
 
-    fun onUpgrade(db: SQLiteDatabase){
-        //Migration code
+        //FAVORITE table
+        private val FAVORITE_TABLE = "Favorite"
+        val FID_COL = "id"
+        val WORD_COL = "word"
     }
 }
