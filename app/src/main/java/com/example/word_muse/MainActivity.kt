@@ -2,6 +2,7 @@ package com.example.word_muse
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -11,6 +12,7 @@ import com.example.word_muse.ui.favorite.FavoriteFragment
 import com.example.word_muse.ui.home.HomeFragment
 import com.example.word_muse.ui.users.UserFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -44,18 +46,14 @@ class MainActivity : AppCompatActivity() {
         val user = UserFragment()
 
         bottomNavigationView.setOnItemSelectedListener { item ->
+            lateinit var fragment: Fragment
             when (item.itemId) {
-                R.id.navigation_home ->
-                    // do something here
-                    true
-                R.id.navigation_favorites ->
-                    // do something here
-                    true
-                R.id.navigation_user ->
-                    // do something here
-                    true
-                else -> true
+                R.id.navigation_home -> fragment = home
+                R.id.navigation_favorites -> fragment = favorite
+                R.id.navigation_user -> fragment = user
             }
+            supportFragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
+            true
         }
         //TODO: Call the database and create events. However do we do those here of do we do those in the home section and or login sections
     }
