@@ -25,11 +25,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Navigation setup
+        //nav should be considered as top level destinations.
         val navView: BottomNavigationView = binding.navView
-
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_home, R.id.navigation_favorites, R.id.navigation_user
@@ -38,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        //Setting up switching between navs
+        //Navigation switching
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.nav_view)
 
         val home = HomeFragment()
@@ -55,6 +54,12 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
             true
         }
-        //TODO: Call the database and create events. However do we do those here of do we do those in the home section and or login sections
+
+        //Database calls
+
+
+        //Searchview calls
+
+
     }
 }

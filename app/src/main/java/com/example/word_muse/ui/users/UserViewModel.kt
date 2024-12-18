@@ -1,4 +1,7 @@
 package com.example.word_muse.ui.users
 
-class UserViewModel {
+import androidx.lifecycle.ViewModel
+
+class UserViewModel : ViewModel() {
+
 }

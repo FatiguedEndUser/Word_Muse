@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -43,15 +44,26 @@ class HomeFragment : Fragment(){
     }
 
 //BINDING METHODS
+//    //API Call
+//    private val _wordData = MutableLiveData("No Data")
+//    val wordData: LiveData<String> get() = _wordData
+//
+//    //TODO: Figure out how to append the word to the end of the endpoint for the api call.
+//    //      we need too follow up with that and attach
+//    private suspend fun getSearch(word: String? = null){
+//        _wordData.value = RetrofitClient.searchApiService.search(word).toString()
+//    }
 
-    //API Call
-    private val _wordData = MutableLiveData("No Data")
-    val wordData: LiveData<String> get() = _wordData
+    private suspend fun search(text: String){
+        val searchBar: SearchView? = null
+        searchBar.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
 
-    //TODO: Figure out how to append the word to the end of the endpoint for the api call.
-    //      we need too follow up with that and attach
-    private suspend fun getSearch(word: String? = null){
-        _wordData.value = RetrofitClient.searchApiService.search(word).toString()
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                TODO("Not yet implemented")
+            }
+        })
     }
-
 }

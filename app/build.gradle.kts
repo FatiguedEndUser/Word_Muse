@@ -76,12 +76,11 @@ dependencies {
 
 
     //Room
-    implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.common)
-    implementation(libs.androidx.room.ktx)
-    ksp(libs.androidx.room.compiler.v250)
-    //annotationProcessor(libs.androidx.room.compiler)
-    implementation(libs.kotlinx.coroutines.android)
+    //implementation(libs.androidx.room.runtime)
+    //implementation(libs.androidx.room.common)
+    //implementation(libs.androidx.room.ktx)
+    //ksp(libs.androidx.room.compiler.v250)
+    //implementation(libs.kotlinx.coroutines.android)
 
 
 }
