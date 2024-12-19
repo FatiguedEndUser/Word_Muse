@@ -61,6 +61,24 @@ class MainActivity : AppCompatActivity() {
 
 
         //Searchview calls
+        fun onCreateOptionsMenu(menu: Menu?): Boolean {
+            menuInflater.inflate(R.menu.menu_search, menu)
+            val searchItem = menu!!.findItem(R.id.search_view)
+            var searchView = searchItem.actionView as android.widget.SearchView
+            searchView.setOnQueryTextListener(object : android.widget.SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String): Boolean {
+                    val query = searchView.query.toString()
+                    return true
+                }
 
+                override fun onQueryTextChange(newText: String): Boolean {
+                    // Handle search query changes
+                    return true
+                }
+            })
+            return true
+        }
+
+        //RecycleView calls
     }
 }
