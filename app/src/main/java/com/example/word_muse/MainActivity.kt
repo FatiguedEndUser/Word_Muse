@@ -9,6 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.word_muse.Database.DatabaseHelper
 import com.example.word_muse.databinding.ActivityMainBinding
 import com.example.word_muse.ui.favorite.FavoriteFragment
 import com.example.word_muse.ui.home.HomeFragment
@@ -58,27 +59,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         //Database calls
+        //Some event for a favorite button that adds to the database as well as the favorites tab
+        val dbHelper = DatabaseHelper(this, null)
+
+        //Search view calls
 
 
-        //Searchview calls
-        fun onCreateOptionsMenu(menu: Menu?): Boolean {
-            menuInflater.inflate(R.menu.menu_search, menu)
-            val searchItem = menu!!.findItem(R.id.search_view)
-            var searchView = searchItem.actionView as android.widget.SearchView
-            searchView.setOnQueryTextListener(object : android.widget.SearchView.OnQueryTextListener {
-                override fun onQueryTextSubmit(query: String): Boolean {
-                    val query = searchView.query.toString()
-                    return true
-                }
-
-                override fun onQueryTextChange(newText: String): Boolean {
-                    // Handle search query changes
-                    return true
-                }
-            })
-            return true
-        }
-
-        //RecycleView calls
+        //Recycle View calls
     }
 }
