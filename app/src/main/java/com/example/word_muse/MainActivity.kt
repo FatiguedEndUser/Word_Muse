@@ -1,6 +1,8 @@
 package com.example.word_muse
 
 import android.os.Bundle
+import android.view.Menu
+import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -59,7 +61,6 @@ class MainActivity : AppCompatActivity() {
 
 
         //Searchview calls
-
 
     }
 }
