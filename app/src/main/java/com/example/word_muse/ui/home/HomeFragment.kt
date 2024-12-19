@@ -8,8 +8,12 @@ import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.view.MenuInflater
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
+import com.example.word_muse.API.RetrofitClient
 import com.example.word_muse.R
 import com.example.word_muse.databinding.FragmentHomeBinding
 import com.example.word_muse.databinding.FragmentHomeBinding.inflate
@@ -43,15 +47,23 @@ class HomeFragment : Fragment(){
     }
 
 //BINDING METHODS
-//    //API Call
-//    private val _wordData = MutableLiveData("No Data")
-//    val wordData: LiveData<String> get() = _wordData
-//
-//    //TODO: Figure out how to append the word to the end of the endpoint for the api call.
-//    //      we need too follow up with that and attach
-//    private suspend fun getSearch(word: String? = null){
-//        _wordData.value = RetrofitClient.searchApiService.search(word).toString()
-//    }
+    //API Call
+    private val _wordData = MutableLiveData("No Data")
+    val wordData: LiveData<String> get() = _wordData
+    suspend fun getSearch(word: String? = null){
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+            android.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                // Handle search query submission
+                return false
+            }
 
+            override fun onQueryTextChange(newText: String): Boolean {
+                // Filter list or perform search operation
+                return false
+            }
+        })
+        _wordData.value = RetrofitClient.searchApiService.search(word.toString()).toString()
+    }
 
 }

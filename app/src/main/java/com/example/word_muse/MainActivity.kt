@@ -1,5 +1,6 @@
 package com.example.word_muse
 
+import android.content.ContentValues
 import android.os.Bundle
 import android.view.Menu
 import android.widget.SearchView
@@ -58,9 +59,21 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-        //Database calls
-        //Some event for a favorite button that adds to the database as well as the favorites tab
-        val dbHelper = DatabaseHelper(this, null)
+//          Database calls
+//          Some event for a favorite button that adds to the database as well as the favorites tab
+//          Crash?!?!
+//
+//        val dbHelper = DatabaseHelper(this, null).writableDatabase
+//        val testUser = ContentValues().apply {
+//            put(DatabaseHelper.USERNAME_COL, "SomeName")
+//            put(DatabaseHelper.PASSWORD_COL, "SomePassword")
+//        }
+//        val testFavorite = ContentValues().apply {
+//            put(DatabaseHelper.WORD_COL, "Test")
+//        }
+//
+//        val newUserRow = dbHelper.insert(DatabaseHelper.USER_TABLE, null, testUser)
+//        val newFavoriteRow = dbHelper.insert(DatabaseHelper.FAVORITE_TABLE, null, testUser)
 
         //Search view calls
 

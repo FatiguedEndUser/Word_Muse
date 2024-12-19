@@ -87,13 +87,13 @@ class DatabaseHelper(context: Context, factory: SQLiteDatabase.CursorFactory?): 
         private val DATABASE_VERSION = 1
 
         //USER table
-        private val USER_TABLE = "User"
+        val USER_TABLE = "User"
         val UID_COL = "id"
         val USERNAME_COL = "username"
         val PASSWORD_COL = "password"
 
         //FAVORITE table
-        private val FAVORITE_TABLE = "Favorite"
+        internal val FAVORITE_TABLE = "Favorite"
         val FID_COL = "id"
         val WORD_COL = "word"
     }
