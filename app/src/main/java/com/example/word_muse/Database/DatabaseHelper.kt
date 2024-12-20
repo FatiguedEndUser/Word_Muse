@@ -6,7 +6,7 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class DatabaseHelper(context: Context, factory: SQLiteDatabase.CursorFactory?): SQLiteOpenHelper(context, DATABASE_NAME, factory, DATABASE_VERSION) {
+class DatabaseHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?): SQLiteOpenHelper(context, DATABASE_NAME, factory, DATABASE_VERSION) {
 
     override fun onCreate(db: SQLiteDatabase?) {
         //CREATE USER TABLE
@@ -26,8 +26,8 @@ class DatabaseHelper(context: Context, factory: SQLiteDatabase.CursorFactory?): 
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        db?.execSQL("DROP TABLE IF EXISTS" + USER_TABLE)
-        db?.execSQL("DROP TABLE IF EXIST" + FAVORITE_TABLE)
+        db?.execSQL("DROP TABLE IF EXISTS $USER_TABLE")
+        db?.execSQL("DROP TABLE IF EXISTS $FAVORITE_TABLE")
     }
 
     //Adding to our database
@@ -83,18 +83,18 @@ class DatabaseHelper(context: Context, factory: SQLiteDatabase.CursorFactory?): 
 
     //LOCAL VARS
     companion object{
-        private val DATABASE_NAME = "mydb"
-        private val DATABASE_VERSION = 1
+        private const val DATABASE_NAME = "mydb"
+        private const val DATABASE_VERSION = 1
 
         //USER table
-        val USER_TABLE = "User"
-        val UID_COL = "id"
-        val USERNAME_COL = "username"
-        val PASSWORD_COL = "password"
+        const val USER_TABLE = "User"
+        const val UID_COL = "id"
+        const val USERNAME_COL = "username"
+        const val PASSWORD_COL = "password"
 
         //FAVORITE table
-        internal val FAVORITE_TABLE = "Favorite"
-        val FID_COL = "id"
-        val WORD_COL = "word"
+        internal const val FAVORITE_TABLE = "Favorite"
+        const val FID_COL = "id"
+        const val WORD_COL = "word"
     }
 }

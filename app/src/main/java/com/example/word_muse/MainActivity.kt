@@ -1,22 +1,17 @@
 package com.example.word_muse
 
-import android.content.ContentValues
 import android.os.Bundle
-import android.view.Menu
-import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.word_muse.Database.DatabaseHelper
 import com.example.word_muse.databinding.ActivityMainBinding
 import com.example.word_muse.ui.favorite.FavoriteFragment
 import com.example.word_muse.ui.home.HomeFragment
 import com.example.word_muse.ui.users.UserFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -60,7 +55,6 @@ class MainActivity : AppCompatActivity() {
         }
 
 //          Database calls
-//          Some event for a favorite button that adds to the database as well as the favorites tab
 //          Crash?!?!
 //
 //        val dbHelper = DatabaseHelper(this, null).writableDatabase

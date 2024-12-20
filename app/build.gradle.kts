@@ -69,6 +69,8 @@ dependencies {
     implementation(libs.androidx.sqlite.android)
     implementation(libs.androidx.sqlite.ktx)
     implementation(libs.car.ui.lib)
+    implementation(libs.junit.junit)
+    implementation(libs.androidx.junit.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
