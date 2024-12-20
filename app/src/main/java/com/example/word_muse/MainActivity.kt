@@ -1,5 +1,6 @@
 package com.example.word_muse
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -7,6 +8,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.word_muse.Database.DatabaseHelper
 import com.example.word_muse.databinding.ActivityMainBinding
 import com.example.word_muse.ui.favorite.FavoriteFragment
 import com.example.word_muse.ui.home.HomeFragment
@@ -74,4 +76,6 @@ class MainActivity : AppCompatActivity() {
 
         //Recycle View calls
     }
+
+
 }

@@ -31,7 +31,7 @@ class DatabaseHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
     }
 
     //Adding to our database
-    fun addUser(username: String, password: String){
+    fun addUser(username: String, password: String) {
         val values = ContentValues()
 
         //Inserting in k-v pair
@@ -48,7 +48,7 @@ class DatabaseHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
         db.close()
     }
 
-    fun addFavorite(word: String){
+    fun addFavorite(word: String) {
         val values = ContentValues()
 
         //Inserting in k-v pair
@@ -65,7 +65,7 @@ class DatabaseHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
     }
 
     //Getting data from our database
-    fun getUser(): Cursor?{
+    fun getUser(): Cursor? {
         //Creating readable form of our database
         val db = this.readableDatabase
 
@@ -73,7 +73,7 @@ class DatabaseHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
         return db.rawQuery("SELECT * FROM $USER_TABLE", null)
     }
 
-    fun getFavorite(): Cursor?{
+    fun getFavorite(): Cursor? {
         //Creating readable form of our database
         val db = this.readableDatabase
 
@@ -81,8 +81,12 @@ class DatabaseHelper(context: Context?, factory: SQLiteDatabase.CursorFactory?):
         return db.rawQuery("SELECT * FROM $FAVORITE_TABLE", null)
     }
 
-    //LOCAL VARS
-    companion object{
+    fun isUserLoggedIn(context: Context): Boolean {
+        val sharedPreferences = context.getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+        return sharedPreferences.getBoolean("logged_in", false)
+    }
+
+    companion object {
         private const val DATABASE_NAME = "mydb"
         private const val DATABASE_VERSION = 1
 
